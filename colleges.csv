@@ -1,0 +1,101 @@
+College Name,City,Cricket,Football,Highest CTC (LPA),Aerospace,CSE,ECE
+IIT Delhi,Delhi,Yes,Yes,240,Yes,Yes,Yes
+IIT Bombay,Mumbai,Yes,Yes,100,Yes,Yes,Yes
+IIT Madras,Chennai,Yes,Yes,120,Yes,Yes,Yes
+IIT Kanpur,Kanpur,Yes,Yes,150,Yes,Yes,Yes
+IIT Kharagpur,Kharagpur,Yes,Yes,120,Yes,Yes,Yes
+IIT Roorkee,Roorkee,Yes,Yes,130,Yes,Yes,Yes
+IIT Guwahati,Guwahati,Yes,Yes,120,Yes,Yes,Yes
+IIT Hyderabad,Hyderabad,Yes,Yes,90,No,Yes,Yes
+IIT BHU,Varanasi,Yes,Yes,220,Yes,Yes,Yes
+IIIT Hyderabad,Hyderabad,No,Yes,65,No,Yes,No
+NIT Trichy,Tiruchirappalli,Yes,Yes,52,No,Yes,Yes
+NIT Surathkal,Surathkal,Yes,Yes,45,No,Yes,Yes
+NIT Warangal,Warangal,Yes,Yes,44,No,Yes,Yes
+BITS Pilani,Pilani,Yes,Yes,90,No,Yes,Yes
+BITS Goa,Goa,Yes,Yes,60,No,Yes,Yes
+BITS Hyderabad,Hyderabad,Yes,Yes,65,No,Yes,Yes
+DTU,Delhi,Yes,Yes,85,No,Yes,Yes
+NSUT,Delhi,Yes,Yes,80,No,Yes,Yes
+VIT Vellore,Vellore,Yes,Yes,60,No,Yes,Yes
+SRM University,Chennai,Yes,Yes,50,No,Yes,Yes
+NIT Trichy,Delhi,Yes,Yes,52,No,Yes,Yes
+NSUT,Pune,Yes,Yes,68,No,Yes,Yes
+DTU,Pune,Yes,Yes,72,No,Yes,Yes
+IIT Hyderabad,Chennai,Yes,Yes,78,No,Yes,Yes
+IIT Delhi,Delhi,Yes,Yes,232,Yes,Yes,Yes
+IIT Madras,Bangalore,Yes,Yes,109,Yes,Yes,Yes
+NSUT,Chennai,Yes,Yes,71,No,Yes,Yes
+SRM University,Bangalore,Yes,Yes,46,No,Yes,Yes
+NIT Trichy,Bangalore,Yes,Yes,45,No,Yes,Yes
+IIT BHU,Hyderabad,Yes,Yes,212,Yes,Yes,Yes
+IIIT Hyderabad,Mumbai,No,Yes,54,No,Yes,No
+IIT Kharagpur,Mumbai,Yes,Yes,104,Yes,Yes,Yes
+NSUT,Kolkata,Yes,Yes,64,No,Yes,Yes
+IIT BHU,Delhi,Yes,Yes,212,Yes,Yes,Yes
+IIT Guwahati,Bangalore,Yes,Yes,111,Yes,Yes,Yes
+IIT Hyderabad,Pune,Yes,Yes,90,No,Yes,Yes
+NSUT,Kolkata,Yes,Yes,79,No,Yes,Yes
+BITS Hyderabad,Mumbai,Yes,Yes,65,No,Yes,Yes
+IIT Guwahati,Mumbai,Yes,Yes,105,Yes,Yes,Yes
+VIT Vellore,Mumbai,Yes,Yes,59,No,Yes,Yes
+BITS Pilani,Mumbai,Yes,Yes,74,No,Yes,Yes
+IIT Madras,Delhi,Yes,Yes,117,Yes,Yes,Yes
+VIT Vellore,Chennai,Yes,Yes,52,No,Yes,Yes
+IIT Guwahati,Chennai,Yes,Yes,110,Yes,Yes,Yes
+VIT Vellore,Delhi,Yes,Yes,54,No,Yes,Yes
+BITS Hyderabad,Pune,Yes,Yes,64,No,Yes,Yes
+IIT Kharagpur,Bangalore,Yes,Yes,100,Yes,Yes,Yes
+NIT Trichy,Kolkata,Yes,Yes,35,No,Yes,Yes
+NIT Warangal,Pune,Yes,Yes,44,No,Yes,Yes
+IIIT Hyderabad,Chennai,No,Yes,53,No,Yes,No
+IIT Delhi,Delhi,Yes,Yes,232,Yes,Yes,Yes
+BITS Hyderabad,Chennai,Yes,Yes,59,No,Yes,Yes
+IIT Delhi,Mumbai,Yes,Yes,223,Yes,Yes,Yes
+IIT Delhi,Bangalore,Yes,Yes,225,Yes,Yes,Yes
+IIT Madras,Kolkata,Yes,Yes,104,Yes,Yes,Yes
+IIT Guwahati,Delhi,Yes,Yes,114,Yes,Yes,Yes
+DTU,Chennai,Yes,Yes,79,No,Yes,Yes
+IIT BHU,Kolkata,Yes,Yes,219,Yes,Yes,Yes
+IIT Bombay,Delhi,Yes,Yes,88,Yes,Yes,Yes
+NIT Trichy,Hyderabad,Yes,Yes,48,No,Yes,Yes
+IIT BHU,Chennai,Yes,Yes,201,Yes,Yes,Yes
+IIT Roorkee,Bangalore,Yes,Yes,122,Yes,Yes,Yes
+NIT Trichy,Delhi,Yes,Yes,44,No,Yes,Yes
+DTU,Hyderabad,Yes,Yes,74,No,Yes,Yes
+IIT Delhi,Kolkata,Yes,Yes,240,Yes,Yes,Yes
+IIT Hyderabad,Mumbai,Yes,Yes,74,No,Yes,Yes
+NIT Surathkal,Chennai,Yes,Yes,30,No,Yes,Yes
+IIT Delhi,Pune,Yes,Yes,231,Yes,Yes,Yes
+IIT Guwahati,Mumbai,Yes,Yes,116,Yes,Yes,Yes
+IIIT Hyderabad,Pune,No,Yes,46,No,Yes,No
+IIT Delhi,Delhi,Yes,Yes,232,Yes,Yes,Yes
+IIT BHU,Hyderabad,Yes,Yes,216,Yes,Yes,Yes
+IIT Kanpur,Hyderabad,Yes,Yes,135,Yes,Yes,Yes
+IIT Kanpur,Bangalore,Yes,Yes,131,Yes,Yes,Yes
+NIT Trichy,Pune,Yes,Yes,37,No,Yes,Yes
+IIT Bombay,Kolkata,Yes,Yes,86,Yes,Yes,Yes
+NIT Surathkal,Delhi,Yes,Yes,40,No,Yes,Yes
+IIT Madras,Bangalore,Yes,Yes,106,Yes,Yes,Yes
+DTU,Chennai,Yes,Yes,76,No,Yes,Yes
+NIT Trichy,Bangalore,Yes,Yes,41,No,Yes,Yes
+BITS Hyderabad,Pune,Yes,Yes,60,No,Yes,Yes
+NIT Surathkal,Kolkata,Yes,Yes,32,No,Yes,Yes
+NIT Surathkal,Bangalore,Yes,Yes,35,No,Yes,Yes
+IIT Delhi,Hyderabad,Yes,Yes,227,Yes,Yes,Yes
+VIT Vellore,Delhi,Yes,Yes,41,No,Yes,Yes
+IIT Kanpur,Delhi,Yes,Yes,150,Yes,Yes,Yes
+IIT Bombay,Delhi,Yes,Yes,82,Yes,Yes,Yes
+NIT Trichy,Chennai,Yes,Yes,36,No,Yes,Yes
+NIT Trichy,Hyderabad,Yes,Yes,52,No,Yes,Yes
+BITS Goa,Hyderabad,Yes,Yes,58,No,Yes,Yes
+IIT Madras,Delhi,Yes,Yes,114,Yes,Yes,Yes
+BITS Pilani,Mumbai,Yes,Yes,82,No,Yes,Yes
+IIT Kharagpur,Pune,Yes,Yes,104,Yes,Yes,Yes
+IIT Bombay,Bangalore,Yes,Yes,84,Yes,Yes,Yes
+BITS Hyderabad,Bangalore,Yes,Yes,56,No,Yes,Yes
+IIT BHU,Chennai,Yes,Yes,214,Yes,Yes,Yes
+IIT Hyderabad,Hyderabad,Yes,Yes,87,No,Yes,Yes
+VIT Vellore,Delhi,Yes,Yes,48,No,Yes,Yes
+VIT Vellore,Hyderabad,Yes,Yes,59,No,Yes,Yes
+NIT Surathkal,Kolkata,Yes,Yes,30,No,Yes,Yes
