@@ -41,7 +41,7 @@ st.write("### 2 Years of Knowledge. 5 Days to Build. 0 Hidden Commissions.")
 st.divider()
 
 # 2. DATA LOADING (IP Syllabus: Unit 1)
-@st.cache_data
+# @st.cache_data
 def load_and_clean():
     df = pd.read_csv('colleges.csv')
     # Normalizing binary data for the logic
