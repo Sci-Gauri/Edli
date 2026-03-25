@@ -52,41 +52,41 @@ def load_and_clean():
 
 df = load_and_clean()
 
-# 3. THE 4-QUESTION FLOW
+# 3. THE 4-QUESTION FLOW (Updated for Multi-Choice)
 st.subheader("Choose Your Preferences")
 
-# Q1: City (With 'Any' Option)
-cities = ["Any City"] + list(df['City'].unique())
-q1_city = st.selectbox("Q1: Which City do you want?", cities)
+# Q1: Cities (Multiple)
+all_cities = list(df['City'].unique())
+q1_cities = st.multiselect("Q1: Which Cities are you considering?", options=all_cities, default=all_cities)
 
 # Q2: Sports
 q2_sport = st.radio("Q2: Preferred Sports Facility?", ["No Preference", "Cricket", "Football"])
 
-# Q3: Highest CTC
-q3_ctc = st.select_slider("Q3: Minimum Highest CTC (LPA) you are looking for?", 
+# Q3: CTC
+q3_ctc = st.select_slider("Q3: Minimum Highest CTC (LPA)?", 
                          options=[0, 10, 20, 30, 40, 50, 100, 200], value=10)
 
-# Q4: Branch
-q4_branch = st.selectbox("Q4: Which branch is your priority?", ["Any", "CSE", "ECE", "Aerospace"])
+# Q4: Branches (Multiple)
+available_branches = ["CSE", "ECE", "Aerospace"]
+q4_branches = st.multiselect("Q4: Which branches are you interested in?", options=available_branches)
 
-# 4. THE FILTERING LOGIC (IP Syllabus: Boolean Indexing)
-# Start with the full dataset
+# 4. THE UPDATED FILTERING LOGIC (IP Syllabus: .isin() and All-Match)
 filtered = df.copy()
 
-# Apply Q1
-if q1_city != "Any City":
-    filtered = filtered[filtered['City'] == q1_city]
+# Filter by Multiple Cities
+filtered = filtered[filtered['City'].isin(q1_cities)]
 
-# Apply Q2
+# Filter by Minimum CTC
+filtered = filtered[filtered['Highest CTC (LPA)'] >= q3_ctc]
+
+# Filter by Sports
 if q2_sport != "No Preference":
     filtered = filtered[filtered[q2_sport] == "Yes"]
 
-# Apply Q3
-filtered = filtered[filtered['Highest CTC (LPA)'] >= q3_ctc]
-
-# Apply Q4
-if q4_branch != "Any":
-    filtered = filtered[filtered[q4_branch] == "Yes"]
+# Filter by Multiple Branches (The 'AND' logic)
+if q4_branches:
+    for branch in q4_branches:
+        filtered = filtered[filtered[branch] == "Yes"]
 
 # 5. THE REVEAL
 st.divider()
