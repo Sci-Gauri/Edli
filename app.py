@@ -1,19 +1,41 @@
 import streamlit as st
 import pandas as pd
 
-# 1. BRANDING & UI (The "Dark Blue, White, Yellow" Theme)
+# 1. THE "BRANDING OVERRIDE" (Fixes the Blue Background)
 st.set_page_config(page_title="Bias-Free Finder", layout="centered")
 
 st.markdown("""
     <style>
-    .main { background-color: #001f3f; color: white; }
-    .stButton>button { background-color: #FFD700; color: #001f3f; font-weight: bold; }
-    .stSelectbox, .stMultiSelect { color: black; }
-    h1, h2, h3 { color: #FFD700 !important; }
-    p { color: white !important; }
+    /* Target the main background and the header */
+    [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+        background-color: #001f3f !important;
+    }
+    
+    /* Force the text to be white */
+    div[data-testid="stVerticalBlock"] p, label, .stMarkdown {
+        color: white !important;
+    }
+
+    /* Yellow Headers */
+    h1, h2, h3 {
+        color: #FFD700 !important;
+    }
+
+    /* Black text for inputs (to keep them readable) */
+    .stSelectbox div[data-baseweb="select"], .stMultiSelect div[data-baseweb="select"] {
+        color: black !important;
+    }
+    
+    /* Yellow Button */
+    .stButton>button {
+        background-color: #FFD700 !important;
+        color: #001f3f !important;
+        border: none;
+    }
     </style>
     """, unsafe_allow_html=True)
 
+# Rest of your title and logic continues here...
 st.title("🛡️ Bias-Free College Finder")
 st.write("### 2 Years of Knowledge. 5 Days to Build. 0 Hidden Commissions.")
 st.divider()
