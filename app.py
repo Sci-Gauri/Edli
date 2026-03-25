@@ -1,50 +1,80 @@
 import streamlit as st
 import pandas as pd
 
-# 1. Setup Page Config
-st.set_page_config(page_title="Bias-Free College Finder", layout="wide")
-st.title("🚀 Zero-Bias College Finder")
-st.subheader("Exposing the truth behind the 'Highest CTC' numbers.")
+# 1. BRANDING & UI (The "Dark Blue, White, Yellow" Theme)
+st.set_page_config(page_title="Bias-Free Finder", layout="centered")
 
-# 2. Load Data (IP Unit 1: Pandas)
+st.markdown("""
+    <style>
+    .main { background-color: #001f3f; color: white; }
+    .stButton>button { background-color: #FFD700; color: #001f3f; font-weight: bold; }
+    .stSelectbox, .stMultiSelect { color: black; }
+    h1, h2, h3 { color: #FFD700 !important; }
+    p { color: white !important; }
+    </style>
+    """, unsafe_allow_input=True)
+
+st.title("🛡️ Bias-Free College Finder")
+st.write("### 2 Years of Knowledge. 5 Days to Build. 0 Hidden Commissions.")
+st.divider()
+
+# 2. DATA LOADING (IP Syllabus: Unit 1)
 @st.cache_data
-def load_data():
+def load_and_clean():
     df = pd.read_csv('colleges.csv')
-    # Clean 'Yes/No' to Boolean (Essential for filtering)
-    binary_cols = ['Cricket', 'Football', 'Aerospace', 'CSE', 'ECE']
-    for col in binary_cols:
-        df[col] = df[col].map({'Yes': True, 'No': False})
+    # Normalizing binary data for the logic
+    cols = ['Cricket', 'Football', 'Aerospace', 'CSE', 'ECE']
+    for c in cols:
+        df[c] = df[c].astype(str).str.strip().str.capitalize()
     return df
 
-df = load_data()
+df = load_and_clean()
 
-# 3. Sidebar Filters (The 'User Input' part of your project)
-st.sidebar.header("Filter Your Future")
-city_choice = st.sidebar.multiselect("Select City", options=df['City'].unique(), default=df['City'].unique())
-min_ctc = st.sidebar.slider("Minimum Highest CTC (LPA)", 0, 250, 10)
+# 3. THE 4-QUESTION FLOW
+st.subheader("Choose Your Preferences")
 
-# Branch Requirements
-st.sidebar.write("Required Branches:")
-needs_cse = st.sidebar.checkbox("Must have CSE")
-needs_ece = st.sidebar.checkbox("Must have ECE")
+# Q1: City (With 'Any' Option)
+cities = ["Any City"] + list(df['City'].unique())
+q1_city = st.selectbox("Q1: Which City do you want?", cities)
 
-# 4. The Logic (IP Unit 1: Dataframe Filtering)
-filtered_df = df[
-    (df['City'].isin(city_choice)) & 
-    (df['Highest CTC (LPA)'] >= min_ctc)
-]
+# Q2: Sports
+q2_sport = st.radio("Q2: Preferred Sports Facility?", ["No Preference", "Cricket", "Football"])
 
-if needs_cse:
-    filtered_df = filtered_df[filtered_df['CSE'] == True]
-if needs_ece:
-    filtered_df = filtered_df[filtered_df['ECE'] == True]
+# Q3: Highest CTC
+q3_ctc = st.select_slider("Q3: Minimum Highest CTC (LPA) you are looking for?", 
+                         options=[0, 10, 20, 30, 40, 50, 100, 200], value=10)
 
-# 5. The Reveal
-st.write(f"Showing **{len(filtered_df)}** colleges matching your criteria:")
+# Q4: Branch
+q4_branch = st.selectbox("Q4: Which branch is your priority?", ["Any", "CSE", "ECE", "Aerospace"])
 
-# Highlight 'Agent Traps' (Manual logic for now)
-# If CTC is high but it's a private city, we flag it as 'Verify Data'
-st.dataframe(filtered_df.sort_values(by='Highest CTC (LPA)', ascending=False))
+# 4. THE FILTERING LOGIC (IP Syllabus: Boolean Indexing)
+# Start with the full dataset
+filtered = df.copy()
 
-# 6. Data Visualization (IP Unit 1: Matplotlib/Plotly)
-st.bar_chart(filtered_df.set_index('College Name')['Highest CTC (LPA)'])
+# Apply Q1
+if q1_city != "Any City":
+    filtered = filtered[filtered['City'] == q1_city]
+
+# Apply Q2
+if q2_sport != "No Preference":
+    filtered = filtered[filtered[q2_sport] == "Yes"]
+
+# Apply Q3
+filtered = filtered[filtered['Highest CTC (LPA)'] >= q3_ctc]
+
+# Apply Q4
+if q4_branch != "Any":
+    filtered = filtered[filtered[q4_branch] == "Yes"]
+
+# 5. THE REVEAL
+st.divider()
+st.subheader("🎯 Recommended Colleges")
+
+if not filtered.empty:
+    # Displaying selected columns for a clean look
+    display_cols = ['College Name', 'City', 'Highest CTC (LPA)']
+    st.table(filtered[display_cols].sort_values(by='Highest CTC (LPA)', ascending=False))
+else:
+    st.error("No colleges match all your criteria. Try lowering the CTC or changing the city.")
+
+st.info("Note: This data is sourced directly to bypass agent commissions.")
