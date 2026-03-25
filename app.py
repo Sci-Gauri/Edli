@@ -81,8 +81,9 @@ filtered = filtered[filtered['City'].isin(q1_cities)]
 filtered = filtered[filtered['Highest CTC (LPA)'] >= q3_ctc]
 
 # Filter by Sports
-if q2_sport != "No Preference":
-    filtered = filtered[filtered[q2_sport] == "Yes"]
+if q2_sport:
+    for sport in q2_sport:
+        filtered = filtered[filtered[branch] == "Yes"]
 
 # Filter by Multiple Branches (The 'AND' logic)
 if q4_branches:
