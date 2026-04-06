@@ -90,11 +90,7 @@ st.write("Try the logic I built during my 24-hour sprint from knowing nothing ab
 
 # Load Data (The same engine, but cleaner UI)
 @st.cache_data
-def get_data():
-    df = pd.read_csv('colleges.csv')
-        return df
-
-df = get_data()
+df = pd.read_csv('colleges.csv')
 
 # Interactive Filter Card
 with st.container():
