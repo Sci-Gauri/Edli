@@ -1,10 +1,6 @@
 import streamlit as st
 import pandas as pd
-
-# 1. PAGE CONFIG & THEME
 st.set_page_config(page_title="Edli | The Bias-Free Engine", page_icon="🛡️", layout="wide")
-
-# Custom CSS for "The Aesthetic" (Navy, White, and Gold)
 st.markdown("""
     <style>
     /* Main Background */
@@ -52,7 +48,6 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# 2. HERO SECTION
 st.markdown("""
     <div class="hero">
         <h1 style="font-size: 3.5rem; margin-bottom: 10px;">🛡️ Edli</h1>
@@ -62,7 +57,6 @@ st.markdown("""
     </div>
     """, unsafe_allow_html=True)
 
-# 3. THE MISSION (The "What I am Making")
 st.write("## 🚀 The Vision")
 col1, col2, col3 = st.columns(3)
 
@@ -84,15 +78,11 @@ with col3:
 
 st.divider()
 
-# 4. THE POC (Proof of Concept)
 st.write("## 🛠️ Proof of Concept )")
 st.write("Try the logic I built during my 24-hour sprint from knowing nothing about websites to deploying one myself")
 
-# Load Data (The same engine, but cleaner UI)
-@st.cache_data
 df = pd.read_csv('colleges.csv')
 
-# Interactive Filter Card
 with st.container():
     st.markdown('<div class="poc-card">', unsafe_allow_html=True)
     c1, c2 = st.columns([1, 2])
@@ -115,9 +105,6 @@ with st.container():
     
     st.markdown('</div>', unsafe_allow_html=True)
 
-# 5. FOOTER
 st.write("")
 st.write("---")
 st.caption("Built in public by an 18-year-old non-tech founder. Edli is 100% independent.")
-
-
